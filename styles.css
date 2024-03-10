@@ -17,7 +17,7 @@ body {
 }
 
 .fimg,
-.search-icon,
+.gimg,
 .aimg,
 .bimg,
 .cimg,
@@ -27,7 +27,7 @@ body {
   object-fit: fill;
   height: fit-content;
   margin-left: 30px;
-  transition: transform 0.75s;
+  transition: transform 0.2s;
   margin-top: 16px;
   background: none;
 
@@ -40,18 +40,18 @@ body {
 .cimg:hover,
 .dimg:hover,
 .eimg:hover,
-.search-icon:hover {
-  filter: drop-shadow(0 0 3px rgb(190, 150, 150));
-  z-index: 300000;
-  animation: glow 1s alternate infinite;
-  transform: rotate(360deg) scale(1.3);
-  backdrop-filter: scale(0.5
-  ) ;
+.gimg:hover {
+  transform: scale(1.5);
+  filter: drop-shadow(0 0 3px rgb(253, 252, 252));
+  z-index: 12000;
+  animation: glow 5s infinite;
+  animation: rotate .3s ease-in-out;
+ 
 
 }
 
-
-@keyframes glow {
+ 
+@keyframes glow { 
   0% {
     filter: drop-shadow(0 0 2px white);
   }
@@ -61,6 +61,16 @@ body {
   }
 
 }
+@keyframes rotate {
+  0% {
+      transform: rotate(0deg) 
+  }
+
+  100% {
+      transform: rotate(359deg) 
+  }
+}
+
 
 
 
@@ -73,7 +83,7 @@ body {
 .cbutton,
 .dbutton,
 .ebutton,
-.search-button {
+.gbutton {
   position: relative;
   background: none;
   border-width: 0;
@@ -89,6 +99,7 @@ body {
 
 .flip-card-inner {
   position: relative;
+  
   width: 100%;
   height: 100%;
   text-align: center;
@@ -128,7 +139,7 @@ body {
 .dbutton .tooltip,
 .ebutton .tooltip,
 .fbutton .tooltip,
-.search-button .tooltip {
+.gbutton .tooltip {
 
   position: absolute;
   background-color: lightgray;
@@ -146,9 +157,10 @@ body {
   white-space: nowrap;
   margin-top: 90px;
   font-weight: 700;
+  z-index: 10000;
 }
 
-.search-button:hover .tooltip {
+.gbutton:hover .tooltip {
   opacity: 1;
 }
 
@@ -164,12 +176,12 @@ body {
   opacity: 1;
 }
 
-.search-icon {
+.gimg {
   height: 70px;
   width: 65px;
 }
 
-.fimg {
+.fimg  {
   height: 70px;
   width: 70px;
   outline: none;
@@ -213,10 +225,113 @@ header {
 
 }
 
-.tech {
-  align-items: center;
-  align-self: right;
 
+
+.tech:has(.bimg:hover) .aimg ,
+.tech:has(.bimg:hover) .cimg ,
+.tech:has(.bimg:hover) .eimg ,
+.tech:has(.bimg:hover) .gimg ,
+.tech:has(.bimg:hover) .dimg ,
+.tech:has(.bimg:hover) .fimg{
+  opacity: 0.4;
+  transform: scale(0.8); 
+  filter: blur(3px);
+}
+
+
+.tech:has(.cimg:hover) .bimg ,
+.tech:has(.cimg:hover) .aimg ,
+.tech:has(.cimg:hover) .eimg ,
+.tech:has(.cimg:hover) .gimg ,
+.tech:has(.cimg:hover) .dimg ,
+.tech:has(.cimg:hover) .fimg{
+  opacity: 0.4;
+  transform: scale(0.8); 
+  filter: blur(3px);
+}
+
+
+.tech:has(.dimg:hover) .bimg ,
+.tech:has(.dimg:hover) .cimg ,
+.tech:has(.dimg:hover) .eimg ,
+.tech:has(.dimg:hover) .gimg ,
+.tech:has(.dimg:hover) .aimg ,
+.tech:has(.dimg:hover) .fimg{
+  opacity: 0.4;
+  transform: scale(0.8); 
+  filter: blur(3px);
+}
+
+
+.tech:has(.eimg:hover) .bimg ,
+.tech:has(.eimg:hover) .cimg ,
+.tech:has(.eimg:hover) .aimg ,
+.tech:has(.eimg:hover) .gimg ,
+.tech:has(.eimg:hover) .dimg ,
+.tech:has(.eimg:hover) .fimg{
+  opacity: 0.4;
+  transform: scale(0.8); 
+  filter: blur(3px);
+}
+
+
+.tech:has(.fimg:hover) .bimg ,
+.tech:has(.fimg:hover) .cimg ,
+.tech:has(.fimg:hover) .aimg ,
+.tech:has(.fimg:hover) .gimg ,
+.tech:has(.fimg:hover) .dimg ,
+.tech:has(.fimg:hover) .eimg{
+  opacity: 0.4;
+  transform: scale(0.8); 
+  filter: blur(3px);
+}
+
+
+.tech:has(.gimg:hover) .bimg ,
+.tech:has(.gimg:hover) .cimg ,
+.tech:has(.gimg:hover) .eimg ,
+.tech:has(.gimg:hover) .aimg ,
+.tech:has(.gimg:hover) .dimg ,
+.tech:has(.gimg:hover) .fimg{
+  opacity: 0.4;
+  transform: scale(0.8); 
+  filter: blur(3px);
+}
+
+.gimg:hover ~ .okayy {
+  /* Change parent styles when any .child is hovered over */
+  background-color: pink;
+}
+
+ 
+
+
+
+
+
+
+
+.tech:has(.aimg:hover) .dimg ,
+.tech:has(.aimg:hover) .bimg ,
+.tech:has(.aimg:hover) .cimg ,
+.tech:has(.aimg:hover) .eimg ,
+.tech:has(.aimg:hover) .gimg ,
+.tech:has(.aimg:hover) .dimg ,
+.tech:has(.aimg:hover) .fimg{
+  opacity: 0.4;
+  transform: scale(0.8); 
+  filter: blur(3px);
+}
+
+
+
+
+
+.tech {
+  
+  align-self: right;
+  align-items: space-between;
+  
 
 
 
@@ -295,7 +410,7 @@ span {
 
 h1 {
   font-size: 56px;
-  -webkit-text-stroke: 1px pink;
+  -webkit-text-stroke: 1px rgb(253, 250, 251);
   color: black;
 }
 
@@ -384,7 +499,7 @@ h3 {
 
 .kk:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0 0 5px aqua);
+  
   cursor: pointer;
 }
 
@@ -397,6 +512,84 @@ h3 {
   font-weight: 600;
 
 }
+
+.cc{
+  font-family: 'Outfit', 'Helvetica Neue';
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.contact-left{
+  display: flex;
+  flex-direction: column;
+  align-items: column;
+  gap: 20px;
+}
+
+.clt h2{
+  font-weight: 600;
+  color: white;
+  font-size: 40px;
+  margin-bottom: 5px;
+
+}
+
+.clt hr{
+
+  border: none;
+  width: 420px;
+  height: 5px;
+  background-color: rgb(18, 79, 79);
+  border-radius: 10px;
+  margin-bottom: 20px;
+
+}
+
+.contact-input{
+  width: 400px;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding-left: 25px;
+  font-weight: 500;
+  color: #666;
+  border-radius: 50px;
+
+}
+.contact-left textarea{
+  height: 140px;
+  padding-top: 15px;
+  border-radius: 20px;
+}
+.contact-input:focus{
+  border: 2px solid black;
+}
+.contact-input::placeholder{
+  color: #a9a9a9;
+
+}
+.contact-left button{
+  display: flex;
+  width: 150px;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 16px;
+  gap: 10px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(270deg, blue , red);
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+contact-right img{
+  width: 500px;
+}
+
+
+
 
 /*var typed = new Typed(" .multiple-text" , {
   strings:["Frontend Developer" , "Freelancer" ,

@@ -34,7 +34,7 @@
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            yoyo
+           <img src="icons/pfp.jpg" style="height: 350px; width: 350px;">
           </div>
           <div class="flip-card-back">
             <img src="icons/qr.png" style="width: 350px; height: 350px;">
@@ -53,8 +53,8 @@
   display: grid;
   grid-template-columns: 80px 80px 80px 80px;
   align-items: center;
-  column-gap: 38px;
-  row-gap: 38px;
+  column-gap: 25px;
+  row-gap: 18px;
   margin-top:0x;
   margin-left: 900px;
   
@@ -63,8 +63,8 @@
 
 ">
       <div class="xo">
-        <button class="search-button">
-          <img class="search-icon" src="thumbails/figma.webp">
+        <button class="gbutton">
+          <img class="gimg" src="thumbails/figma.webp">
           <div class="tooltip">Figma</div>
         </button>
       </div>
@@ -145,6 +145,24 @@
           </div>
 
         </section>
+        <div class="cc" style="width: auto; height: 100vh;  margin-top: 100px;">
+          <form  action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="clt">
+              <h2>Contact Me
+              </h2>
+              <hr>
+            </div>
+            <input type="hidden" name="access_key" value="9621d6b5-2285-48bf-8a0e-c9d192af1f0d">
+            <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
+            <input type="email" name="email" placeholder="Your Email" class="contact-input" required>
+            <textarea name="message" placeholder="Your Message" class="contact-input" required></textarea>
+            <button type="submit"> Submit here </button>
+          </form>
+          <div class="contact-right">
+            <img src="icons/pfp.jpg" alt="">
+          </div>
+
+        </div>
 
 </body>
 
