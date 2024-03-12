@@ -145,18 +145,18 @@ body {
   background-color: lightgray;
   color: black;
   border-radius: 3px;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 6px;
+  padding-bottom: 6px;
   padding-left: 10px;
-  padding-right: 8px;
-  font-size: 15px;
+  padding-right: 10px;
+  font-size: 20px;
   bottom: -40px;
   opacity: 0;
   transition: opacity alternate 1.5s;
   pointer-events: none;
   white-space: nowrap;
   margin-top: 90px;
-  font-weight: 700;
+  font-weight: 800;
   z-index: 10000;
 }
 
@@ -478,13 +478,15 @@ h3 {
   align-self: center;
   align-content: center;
   margin-bottom: 0px;
-  margin-top: 150px;
+  margin-top: 10px;
   margin-left: 600px;
   background-color: transparent;
   height: 40px;
   display: grid;
   grid-template-columns: 50px 50px 50px 50px 50px;
   column-gap: 30px;
+  padding-bottom: 120px;
+  margin-bottom: 80px;
 
 }
 
@@ -519,6 +521,13 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  background-image: radial-gradient(
+    circle closest-side at var(--x, 30%) var(--y, 30%),
+    #1250aa 0%,
+    transparent calc(var(--r, 5px) - 5px)
+  );
+  display: flex;
+ 
 }
 
 .contact-left{
@@ -597,4 +606,10 @@ contact-right img{
   typeSpeed: 70 ,
   backSpeed: 50 ,
   backDelay: 1000 ,
-  loop: true})*/
+  loop: true})           
+  things to be added
+  skill section update -- react , solidity , vercel , netlify ,tailwind ,python , fastapi , vite aws , framer 
+  project section update
+  resume add on 
+  gradient on hover around name
+  */
