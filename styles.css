@@ -12,8 +12,38 @@ header {
 body {
   background-color: black;
   margin-bottom: 600px;
+  
+
+}
+
+#xx{
+  background-color: #fff;
+  height: 150px;
+  width: 500px;
+  top: 4000px;
+}
+
+canvas {
+  position: relative
+  top:200;
+  left:0;
+  width: 1500px;
+  height: 400px;
+  z-index:5;
+  opacity:1;
+  background-color: #bbb;
+  }
+#jv{
+  height: 300px;
+  aspect-ratio: 1;
+}
 
 
+#xxx{
+
+  height: 100px;
+  width: 1000px;
+  aspect-ratio: 1;
 }
 
 .fimg,
@@ -29,6 +59,7 @@ body {
   margin-left: 30px;
   transition: transform 0.2s;
   margin-top: 16px;
+  filter: brightness(150%);
   background: none;
 
 }
@@ -42,7 +73,8 @@ body {
 .eimg:hover,
 .gimg:hover {
   transform: scale(1.5);
-  filter: drop-shadow(0 0 3px rgb(253, 252, 252));
+  filter: brightness(150%);
+  filter: drop-shadow(0 0 2px rgb(253, 252, 252));
   z-index: 12000;
   animation: glow 5s infinite;
   animation: rotate .3s ease-in-out;
@@ -95,6 +127,7 @@ body {
   width: 350px;
   height: 350px;
   perspective: 1000px;
+  border-radius: 50%;
 }
 
 .flip-card-inner {
@@ -105,6 +138,7 @@ body {
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  border-radius: 50%;
 }
 
 
@@ -118,6 +152,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+  border-radius: 50%;
   backface-visibility: hidden;
 }
 
@@ -125,12 +160,14 @@ body {
 .flip-card-front {
   background-color: #bbb;
   color: black;
+  border-radius: 50%;
 }
 
 .flip-card-back {
   background-color: dodgerblue;
   color: white;
   transform: rotateY(180deg);
+  border-radius: 50%;
 }
 
 .abutton .tooltip,
@@ -235,7 +272,7 @@ header {
 .tech:has(.bimg:hover) .fimg{
   opacity: 0.4;
   transform: scale(0.8); 
-  filter: blur(3px);
+  filter: blur(2px);
 }
 
 
@@ -247,7 +284,7 @@ header {
 .tech:has(.cimg:hover) .fimg{
   opacity: 0.4;
   transform: scale(0.8); 
-  filter: blur(3px);
+  filter: blur(2px);
 }
 
 
@@ -259,7 +296,7 @@ header {
 .tech:has(.dimg:hover) .fimg{
   opacity: 0.4;
   transform: scale(0.8); 
-  filter: blur(3px);
+  filter: blur(2px);
 }
 
 
@@ -271,7 +308,7 @@ header {
 .tech:has(.eimg:hover) .fimg{
   opacity: 0.4;
   transform: scale(0.8); 
-  filter: blur(3px);
+  filter: blur(2px);
 }
 
 
@@ -283,7 +320,7 @@ header {
 .tech:has(.fimg:hover) .eimg{
   opacity: 0.4;
   transform: scale(0.8); 
-  filter: blur(3px);
+  filter: blur(2px);
 }
 
 
@@ -295,7 +332,7 @@ header {
 .tech:has(.gimg:hover) .fimg{
   opacity: 0.4;
   transform: scale(0.8); 
-  filter: blur(3px);
+  filter: blur(2px);
 }
 
 .gimg:hover ~ .okayy {
@@ -303,7 +340,6 @@ header {
   background-color: pink;
 }
 
- 
 
 
 
@@ -471,6 +507,29 @@ h3 {
   border: 2px solid gray;
   margin-top: 0px;
   padding-top: 0px;
+  perspective: 1000px; /* Add perspective for 3D effect */
+  transition: transform 0.3s ease;
+}
+
+.k:hover {
+  transform: rotateX(5deg) rotateY(5deg); /* Rotate the content on hover */
+  transition: transform 0.3s ease; /* Trigger animation on hover */
+}
+
+#blob{
+  background-color: white;
+  height: 300px;
+  aspect-ratio: 1;position: absolute;
+  z-index: -19000;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right , 
+    green ,
+    purple
+  );
 }
 
 .contactme {
@@ -488,6 +547,13 @@ h3 {
   padding-bottom: 120px;
   margin-bottom: 80px;
 
+}
+.wrapper{
+  color: white;
+  padding-top: 0;
+  margin-top: 0;
+  justify-content: center;
+  font-size: 90px;
 }
 
 .kk {
@@ -515,7 +581,7 @@ h3 {
 
 }
 
-.cc{
+.ck{
   font-family: 'Outfit', 'Helvetica Neue';
   background: none;
   display: flex;
@@ -524,6 +590,7 @@ h3 {
   background-image: radial-gradient(
     circle closest-side at var(--x, 30%) var(--y, 30%),
     #1250aa 0%,
+    pink 0%,
     transparent calc(var(--r, 5px) - 5px)
   );
   display: flex;
@@ -588,7 +655,7 @@ h3 {
   gap: 10px;
   border: none;
   color: #fff;
-  background: linear-gradient(270deg, blue , red);
+  background: linear-gradient(270deg, rgb(196, 176, 25) , rgb(128, 34, 174));
   cursor: pointer;
   border-radius: 50px;
 }
