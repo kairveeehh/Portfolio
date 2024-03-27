@@ -4,7 +4,7 @@ header {
   color: bisque;
   background-color: black;
 
-  z-index: 2000;
+  z-index: 1;
   top: 0px;
   outline: none;
 }
@@ -24,14 +24,17 @@ body {
 }
 
 canvas {
-  position: relative
+  position: relative;
   top:200;
   left:0;
   width: 1500px;
   height: 400px;
-  z-index:5;
+  z-index: 5;
   opacity:1;
   background-color: #bbb;
+  margin-top: 80px;
+
+  
   }
 #jv{
   height: 300px;
@@ -537,8 +540,8 @@ h3 {
   align-self: center;
   align-content: center;
   margin-bottom: 0px;
-  margin-top: 10px;
-  margin-left: 600px;
+  margin-top: 60px;
+ margin-left: 1200px;
   background-color: transparent;
   height: 40px;
   display: grid;
@@ -558,11 +561,12 @@ h3 {
 
 .kk {
   padding: 0px;
-  margin: 0px;
-  top: 0px;
-  bottom: 0px;
+ 
+  
   background-color: azure;
   border-radius: 3px;
+ 
+  margin-right: 0px;
 }
 
 .kk:hover {
@@ -578,6 +582,7 @@ h3 {
   margin-left: -80px;
   font-size: 24px;
   font-weight: 600;
+
 
 }
 
