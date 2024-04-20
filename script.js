@@ -302,6 +302,16 @@ function resizeCanvas() {
     }
 }
 
+function changeColor() {
+    for (var i = 0; i < pointers.length; i++) {
+        pointers[i].color = [Math.random() + 0.2, Math.random() + 0.2, Math.random() + 0.2];
+    }
+}
+
+
+setInterval(changeColor, 1000);
+
+
 canvas.addEventListener('mousemove', function (e) {
     pointers[0].moved = pointers[0].down;
     pointers[0].dx = (e.offsetX - pointers[0].x) * 10.0;
@@ -407,6 +417,96 @@ document.addEventListener("DOMContentLoaded", function () {
 //   blob.style.top = `${clientY}px`;}
 
 
+// const card = document.querySelector(".card");
+// const THRESHOLD = 15;
 
+// function handleHover(e) {
+// 	// TODO
+//     const { clientX, clientY, currentTarget } = e;
+//     const { clientWidth, clientHeight, offsetLeft, offsetTop } = currentTarget;
+  
+//     const horizontal = (clientX - offsetLeft) / clientWidth;
+//     const vertical = (clientY - offsetTop) / clientHeight;
+//     const rotateX = (THRESHOLD / 2 - horizontal * THRESHOLD).toFixed(2);
+//     const rotateY = (vertical * THRESHOLD - THRESHOLD / 2).toFixed(2);
+// }
+
+// function resetStyles(e) {
+// 	// TODO
+//     card.style.transform =
+//     `perspective(${e.currentTarget.clientWidth}px) rotateX(0deg) rotateY(0deg)`;
+// }
+
+// card.addEventListener("mousemove", handleHover);
+// card.addEventListener("mouseleave", resetStyles);
+
+
+const $card = document.querySelector('.card');
+let bounds;
+
+function rotateToMouse(e) {
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+  const leftX = mouseX - bounds.x;
+  const topY = mouseY - bounds.y;
+  const center = {
+    x: leftX - bounds.width / 2,
+    y: topY - bounds.height / 2
+  }
+  const distance = Math.sqrt(center.x**2 + center.y**2);
+  
+  $card.style.transform = `
+    scale3d(1.07, 1.07, 1.07)
+    rotate3d(
+      ${center.y / 100},
+      ${-center.x / 100},
+      0,
+      ${Math.log(distance)* 2}deg
+    )
+  `;
+  
+  $card.querySelector('.glow').style.backgroundImage = `
+    radial-gradient(
+      circle at
+      ${center.x * 2 + bounds.width/2}px
+      ${center.y * 2 + bounds.height/2}px,
+      #ffffff55,
+      #0000000f
+    )
+  `;
+}
+
+$card.addEventListener('mouseenter', () => {
+  bounds = $card.getBoundingClientRect();
+  document.addEventListener('mousemove', rotateToMouse);
+});
+
+$card.addEventListener('mouseleave', () => {
+  document.removeEventListener('mousemove', rotateToMouse);
+  $card.style.transform = '';
+  $card.style.background = '';
+});
+
+
+// var $window = $(window);
+// var $elem = $(".canvas")
+
+//     function isScrolledIntoView($elem, $window) {
+//         var docViewTop = $window.scrollTop();
+//         var docViewBottom = docViewTop + $window.height();
+
+//         var elemTop = $elem.offset().top;
+//         var elemBottom = elemTop + $elem.height();
+
+//         return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+//     }
+
+
+// $(document).on("scroll", function () {
+//     if (isScrolledIntoView($elem, $window)) {
+//         $elem.addClass("animate")
+//         console.log("now you see me");
+//     }
+// });
 
 
